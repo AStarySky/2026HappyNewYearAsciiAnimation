@@ -23,14 +23,14 @@
 由于 curses 库的限制，建议在 Linux 或 macOS 环境下运行。
 如果是 Windows 用户，请先安装 windows-curses：
 
-pip install windows-curses numpy Pillow
+```pip install windows-curses numpy Pillow```
 
 
 ### 2. 运行动画
 
 克隆仓库并直接运行主程序：
 
-python 2026hpn.py
+```python 2026hpn.py```
 
 
 提示：请尽量调小终端字体并全屏运行，以获得最佳视觉效果！
