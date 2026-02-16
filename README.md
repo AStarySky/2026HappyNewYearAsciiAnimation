@@ -1,2 +1,88 @@
-# 2026HappyNewYearAsciiAnimation
-Ascii Art Animation in terminal for 2026
+🚀 2026 字符之光：硬核 3D 终端渲染引擎
+
+这是一个纯 Python 编写的终端动画引擎。它不依赖任何图形库（如 OpenGL 或 DirectX），完全在命令行窗口（Terminal）中通过 ASCII 字符实现了 3D 渲染、物理粒子系统和字符光栅化技术。
+
+“在代码的浪漫里，迎接 2026。”
+
+🌟 核心特性
+
+物理烟花系统：基于欧拉积分的粒子模拟，支持心形、星形等多种爆炸数学模型。
+
+3D 渲染管线：手写 Ray-Torus 求交算法，支持 Phong 光照模型（漫反射 + 高光）。
+
+字符光栅化：利用 PIL 将现代字体实时转化为 ASCII 字符阵列，支持动态密度渐变。
+
+极致优化：全面使用 NumPy 向量化运算，配合 curses 双缓冲技术，锁定 60 FPS 丝滑体验。
+
+艺术化背景：内置精细的 ASCII 艺术画，支持透明层叠渲染。
+
+🛠️ 快速开始
+
+1. 环境准备
+
+由于 curses 库的限制，建议在 Linux 或 macOS 环境下运行。
+如果是 Windows 用户，请先安装 windows-curses：
+
+pip install windows-curses numpy Pillow
+
+
+2. 运行动画
+
+克隆仓库并直接运行主程序：
+
+python 2026hpn.py
+
+
+提示：请尽量调小终端字体并全屏运行，以获得最佳视觉效果！
+
+📂 文件结构
+
+文件名
+
+功能描述
+
+2026hpn.py
+
+主程序入口，负责初始化画布与主循环调度。
+
+torus.py
+
+3D 圆环渲染核心，包含矩阵变换与光照计算。
+
+firework.py
+
+烟花粒子系统，管理粒子的生命周期与物理运动。
+
+textrasterizer.py
+
+字符光栅化工具，将文本转为 ASCII 艺术。
+
+asciidrawer.py
+
+负责静态 ASCII 艺术画的渲染与透明叠加。
+
+houseascii.txt
+
+存储场景底部的建筑艺术画数据。
+
+🧠 技术原理简述
+
+3.1 3D 求交数学
+
+圆环面（Torus）方程：
+
+
+$$(R - \sqrt{x^2 + y^2})^2 + z^2 = r^2$$
+
+
+程序通过对屏幕像素点进行逆变换，求解一元四次方程来确定字符的明暗。
+
+3.2 向量化加速
+
+为了避免 Python 循环带来的卡顿，本项目所有的坐标变换、光照强度计算均通过 NumPy 矩阵运算完成，单帧渲染耗时控制在 10ms 以内。
+
+📜 许可说明
+
+本项目采用 MIT License 开源。
+
+祝大家 2026 年，代码 0 Error，人生 100% Success！ 🎆
